@@ -1,6 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import IntroPage from "pages/Intro/index";
 
 function App() {
   return (
@@ -8,7 +9,9 @@ function App() {
       <Router>
         <GlobalStyle />
         <Switch>
-          <Route path="/" exact></Route>
+          <Route path="/" exact>
+            <IntroPage />
+          </Route>
         </Switch>
       </Router>
     </div>
