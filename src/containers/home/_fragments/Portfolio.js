@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import home1 from "images/home1.png";
 import home2 from "images/home2.png";
+import Modal from "./Modal";
 
 const Portfolio = () => {
+  const [show, setShow] = useState(false);
+
   return (
     <Container id="portfolio">
       <ContentsContainer>
@@ -21,8 +24,9 @@ const Portfolio = () => {
             등의 기능이 들어가있습니다. <br /> 그 외에도 세세한 기능들이
             담겨있으니 아래 버튼으로 확인해주세요.
           </Text>
-          <MoreBtn>더보기</MoreBtn>
+          <MoreBtn onClick={() => setShow(true)}>더보기</MoreBtn>
         </TextContainer>
+        {show && <Modal setShow={setShow} />}
       </ContentsContainer>
     </Container>
   );
