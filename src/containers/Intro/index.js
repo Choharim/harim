@@ -1,10 +1,19 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import intro1 from "images/intro1.jpg";
 import intro2 from "images/intro2.jpg";
 
 const Intro = () => {
   const [image, setImage] = useState(`${intro1}`);
+
+  const enterPage = () => {
+    setImage(`${intro2}`);
+  };
+
+  const leavePage = () => {
+    setImage(`${intro1}`);
+  };
 
   return (
     <Bg image={image}>
@@ -13,7 +22,9 @@ const Intro = () => {
           <IntroText>Front End-Developer</IntroText>
           <IntroText>조 하림</IntroText>
         </TextContainer>
-        <EnterBtn>Welcome</EnterBtn>
+        <EnterBtn to="/home" onMouseEnter={enterPage} onMouseLeave={leavePage}>
+          Welcome
+        </EnterBtn>
       </IntroContainer>
     </Bg>
   );
@@ -49,14 +60,14 @@ const IntroText = styled.h1`
   color: white;
 `;
 
-const EnterBtn = styled.button`
+const EnterBtn = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
   padding: 15px 30px;
   border-radius: 30px;
   border: 2.5px solid #3c7a9d;
+  text-decoration: none;
   font-size: 20px;
   background-color: transparent;
   color: #f6a9ad;
