@@ -40,6 +40,7 @@ const Bg = styled.div`
   height: 100vh;
   background-image: url(${(props) => props.image});
   background-size: contain;
+  transition: 0.5s linear;
 `;
 
 const IntroContainer = styled.div`
