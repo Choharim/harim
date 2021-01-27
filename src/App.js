@@ -25,9 +25,11 @@ function App() {
 export default App;
 
 const GlobalStyle = createGlobalStyle`
-	body {
-		padding: 0;
+* {
+  padding: 0;
 		margin: 0;
+}
+	body {
     font-family: 'Noto Serif KR', serif;
 	}
 `;

@@ -13,6 +13,10 @@ const Skills = () => {
       <ContentsContainer>
         <Picture />
         <TextContainer>
+          <h1>
+            365일 깃허브 잔디를 가꾸는 열정을 지닌 <span>조하림</span>입니다.
+          </h1>
+          <p>Stack</p>
           <SkillsContainer>
             <Skill src={react} />
             <Skill src={javascript} />
@@ -20,7 +24,6 @@ const Skills = () => {
             <Skill src={css} />
             <Skill src={github} />
           </SkillsContainer>
-          <Text>빠르게 성장하고 있는, 미래가 기대되는 조 하림입니다.</Text>
         </TextContainer>
       </ContentsContainer>
     </Container>
@@ -32,7 +35,7 @@ export default Skills;
 const Container = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
@@ -41,38 +44,58 @@ const Container = styled.section`
 
 const ContentsContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-bottom: 40px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 0 0;
+  width: 100%;
+  max-width: 978px;
+  height: 100%;
+  max-height: 500px;
 `;
 
 const Picture = styled.div`
   width: 500px;
   height: 500px;
   background-image: url(${harim});
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0.375rem;
 `;
 
 const TextContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-top: 10px;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: calc(100% - 516px);
+  height: 100%;
+  padding: 0 0 0 16px;
+
+  > h1 {
+    font-size: 18px;
+    > span {
+      font-weight: bold;
+      color: #3c7a9d;
+    }
+  }
+
+  > p {
+    margin: 20px 0 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
 `;
 
 const SkillsContainer = styled.div`
   display: flex;
+  margin: 10px 0 0;
   width: 100%;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-const Skill = styled.img`
-  width: 80px;
-  height: 80px;
 `;
 
-const Text = styled.span`
-  margin-top: 10px;
-  font-size: 16px;
+const Skill = styled.img`
+  width: calc(100% / 5 - 30px);
+  :not(:last-child) {
+    margin: 0 10px 0 0;
+  }
 `;

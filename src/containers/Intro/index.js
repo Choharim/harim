@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import intro1 from "images/intro1.jpg";
 import intro2 from "images/intro2.jpg";
+import { icons } from "react-icons/lib";
 
 const Intro = () => {
   const [image, setImage] = useState(`${intro1}`);
